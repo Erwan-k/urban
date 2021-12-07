@@ -2,26 +2,41 @@
 Urban API is an open source API to organise a football match
 
 ## Specifications
-Organize a football match with two teams of 5 players each
-
+Organize a football match with two teams (rouge and bleu) of 5 players each
+If both teams are complete, a player is allowed to join a "waiting list"
 
 ## Data
-* Match : adress, day, hour
-* Player : name, mail
-* Team : compose of 5 players
+* Player : adresse_mail, mdp, lastname, firstname, age, avatar
+* Match : reference, adresse, day, hour, organisateur
+* Team : ref_match, ref_player, team_color, date
+* Token : adresse_mail, token_
+* Adresse_mail_non_verif : adresse_mail, code
+* Changement_de_mot_de_passe : adresse_mail, code
 
 ## Routes
-CRUD (create, read, update, delete) 
-* CRUD match
-* CRUD player
-* CRUD team
+* user/post : subscribe
+* mail_code/get : ask for a new confirmation mail
+* mail_code/delete : verify your mail
+* password_code/post : ask for a code received by mail that will allow you to change your password
+* password/put : allow you to change your password using the referenced code
+* password2/put : allow you to change your password using your older password
+* login/get : log in and get a token
+* account/get : get your account information
+* account/put : modify your account information
+* match/get : get a list of all matches and participants
+* match/post : create a new match
+* match/put : modify a match informations
+* match/delete : delete a match information
+* match2/get : get a list of all matches you are in
+* match2/delete : delete a match you organised which does not count any players
+* team/post : join a match
+* team/delete : leave a match
 
 ## Basics Fonctionalities
-* As an organisator I want to be able to create a new match
-* As a player I need to list all available matches
-* As a player I want to select a match and validate my participation
+* As a new player I can : subscribe, verify my mail, ask for a new confimation mail if needed, change my password using my mail or my older password.
+* As a player I can get a list of all matches proposed showing how full they are.
+* As an organisator I can create a match, modify it or even delete it. The delete fuction is meant to be down and get replaced by a "delete only if there is no playe".
+* As a player I can join matches, get a list of all matches I joined and leave them.
+" As a player I can join a "waiting list" if both rouge and bleu teams are full. If a player leave one of those teams, I will automatically be asigned to his position and receive a mail that will let me know about it.
 
 
-## Advanced Fonctionalities
-* As an organisator I want to add a "waiting list" wich is a group of 2 or 3 potential player if 
-* As a player I can join the waiting list if the match is full
