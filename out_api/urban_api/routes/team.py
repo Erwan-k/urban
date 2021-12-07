@@ -141,7 +141,7 @@ class team(Resource):
 		#J'envoie un mail à mon remplacant
 		if True:
 			obj = "Une place s'est libérée !"
-			#envoyer_email("Un joueur s'est désisncrit du match de ***** à ***** à l'adresse : ***** pour lequel vous étiez sur la liste supplémentaire. Vous êtes donc promu joueur titulaire de l'équipe *****",obj,adresse_mail)
+			envoyer_email("Un joueur s'est désisncrit du match de ***** à ***** à l'adresse : ***** pour lequel vous étiez sur la liste supplémentaire. Vous êtes donc promu joueur titulaire de l'équipe *****",obj,adresse_mail)
 
 		mycursor.close()
 		mydb.close()
