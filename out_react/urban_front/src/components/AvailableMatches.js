@@ -4,6 +4,7 @@ import {Routes, Route, Navigate} from 'react-router-dom';
 import {Alert, Button, Form, Navbar, Nav} from 'react-bootstrap'
 
 import ElementMatch from "./ElementMatch.js";
+import AddMatchModal from "./AddMatchModal.js";
 
 import image1 from './image_logoff_1.png'
 
@@ -87,7 +88,7 @@ class AvailableMatches extends React.Component {
 
 						<div class="aaadc"> {liste} </div>
 
-						<Button variant="success"> Proposer un nouveau match </Button>
+						<AddMatchModal />
 
 					</div>
 				</div>

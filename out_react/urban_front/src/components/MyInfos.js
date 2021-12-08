@@ -5,6 +5,8 @@ import {Alert, Button, Form, Navbar, Nav} from 'react-bootstrap'
 
 import image1 from './image_logoff_1.png'
 
+import ModifyInfosModal from "./ModifyInfosModal.js";
+
 class MyInfos extends React.Component {
 	constructor(){
 		super()
@@ -91,7 +93,7 @@ class MyInfos extends React.Component {
 							{contenu}
 						</div>
 
-					<Button variant="success"> Modifier ses informations personnelles </Button>
+					<ModifyInfosModal />
 
 					</div>
 				</div>

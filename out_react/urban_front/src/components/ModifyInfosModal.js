@@ -39,8 +39,6 @@ class MyVerticallyCenteredModal extends React.Component{
   render(){
 
   	const {nom,niveau} = this.state
-  	console.log("hey there")
-  	console.log(this.props.infos)
 
     return(
 
@@ -52,33 +50,27 @@ class MyVerticallyCenteredModal extends React.Component{
         >
           <Modal.Header>
             <Modal.Title id="contained-modal-title-vcenter">
-                Rejoindre le match du {this.props.infos.day} à {this.props.infos.hour}
+                Informations joueur
             </Modal.Title>
           </Modal.Header> <br />
 
 
           <Modal.Body>
 
-            <h4>Information match</h4> <br />
+            <h4>Informations joueur</h4> <br />
             
-            Le match aura lieu le {this.props.infos.day} à {this.props.infos.hour}. <br /> <br />
+            <div class="aaafa"> Nom </div>
+            <div class="aaafb"> <Form> <Form.Control type="text" placeholder="Nom" name="nom" value={nom} onChange={this.changeHandler} /> </Form> </div>
+            <div class="aaafc"> Prénom </div>
+            <div class="aaafd"> <Form> <Form.Control type="text" placeholder="Prénom" name="nom" value={nom} onChange={this.changeHandler} /> </Form> </div>
+            <div class="aaafe"> Age </div>
+            <div class="aaaff"> <Form> <Form.Control type="text" placeholder="Age" name="nom" value={nom} onChange={this.changeHandler} /> </Form> </div>
 
-            <h4> Participants </h4> <br />
-
-            L'équipe rouge se composera des joueurs suivants : <br />
-
-            L'équipe bleu se composera des joueurs suivants : <br />
-
-            Voici la liste supplémentaire pour ce match : <br /> <br />
-
-            <h4> Inscription </h4> <br />
-
-            
 
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="danger"> S'inscrire dans l'équipe rouge </Button> <Button> S'inscrire dans l'équipe bleue </Button> <Button variant="dark"> S'inscrire sur la liste supplémentaire </Button>
-		</Modal.Footer>
+            <Button onClick={this.submitHandler}>Enregistrer les modifications</Button>
+          </Modal.Footer>
         </Modal>
 
       )
@@ -86,39 +78,26 @@ class MyVerticallyCenteredModal extends React.Component{
 
 }
 
-
-
-
-
-function ElementMatch(props){
-	const [modalShow, setModalShow] = React.useState(false);
-
-	let couleur
-	if (props.infos.am_i_origin === 1) {couleur = "success"}
-	else {couleur = "primary"}
-
+function ModifyInfosModal(props){
+  const [modalShow, setModalShow] = React.useState(false);
   return(
       <div class="aaafg">
           <>
-			<div class="aaadd">
-				<Button variant={couleur} onClick={() => setModalShow(true)}>
-					<div> {props.infos.day} </div>
-					<div> {props.infos.hour} </div>
-					<div> {props.infos.nbr_rouge}/5 </div>
-					<div> {props.infos.nbr_bleu}/5 </div>
-				</Button>
-				<MyVerticallyCenteredModal
-	              show={modalShow}
-	              infos = {props.infos}
-	              fonctionReRender = {props.fonctionReRender}
-	              onHide={() => setModalShow(false)}
-	            />
-			</div>
+            <Button variant="success" onClick={() => setModalShow(true)}> Modifier ses informations personnelles </Button>
+
+            <MyVerticallyCenteredModal
+              show={modalShow}
+              fonctionReRender = {props.fonctionReRender}
+              onHide={() => setModalShow(false)}
+            />
           </>
       </div>
       )
 }
 
-export default ElementMatch;
+export default ModifyInfosModal;
+
+
+
 
 

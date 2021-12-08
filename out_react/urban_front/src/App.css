@@ -142,7 +142,11 @@
   border:1px black solid;
   margin-bottom: 5%;
 }
-
+.aaafg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 
 
