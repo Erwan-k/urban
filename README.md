@@ -9,14 +9,13 @@ If both teams are complete, a player is allowed to join a "waiting list"
 
 * Using docker : 
 Clone the repository and run the following commands :
-- docker-compose build
-- docker-compose up -d
+### `docker-compose up -d`
 
 In this senario the api will be available on port 1241
 
 * Without docker you can mannualy run the flask application by setting your path to ./out_api/urban_api/ and then run the following commands :
-- pip install -r requirements.txt
-- python main.py
+### `pip install -r requirements.txt`
+### `python main.py`
 
 In this senario the api will be available on port 5000
 
