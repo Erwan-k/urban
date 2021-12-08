@@ -5,6 +5,21 @@ Urban API is an open source API to organise a football match
 Organize a football match with two teams (rouge and bleu) of 5 players each
 If both teams are complete, a player is allowed to join a "waiting list"
 
+## Setup
+
+* Using docker : 
+Clone the repository and run the following commands :
+- docker-compose build
+- docker-compose up -d
+
+In this senario the api will be available on port 1241
+
+* Without docker you can mannualy run the flask application by setting your path to ./out_api/urban_api/ and then run the following commands :
+- pip install -r requirements.txt
+- python main.py
+
+In this senario the api will be available on port 5000
+
 ## Data
 * Player : adresse_mail, mdp, lastname, firstname, age, avatar
 * Match : reference, adresse, day, hour, organisateur
